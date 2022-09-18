@@ -69,52 +69,52 @@ checkEmpty();
 
 // конструктор >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-// function Online(name) {
-//     this._name = name,
-//         this._pluggedIn = 'pluggedIn',
-//         this._unPlugged = 'unPlugged'
-// }
+function Online(name) {
+    this._name = name,
+        this._pluggedIn = 'pluggedIn',
+        this._unPlugged = 'unPlugged'
+}
 
-// Online.prototype.getWatts = function (watts) {
-//     console.log(`Потребляемая мощность ${watts} ватт`);
-// }
+Online.prototype.getWatts = function (watts) {
+    console.log(`Потребляемая мощность ${watts} ватт`);
+}
 
 // 1-й прибор -----------------------------------------------
 
-// function Computer(name) {
-//     this._name = name,
-//         this.pluggedIn = this._pluggedIn
-// }
+function Computer(name) {
+    this._name = name,
+        this.pluggedIn = this._pluggedIn
+}
 
-// Computer.prototype = new Online('homePC');
+Computer.prototype = new Online('homePC');
 
-// Computer.prototype.getWatts = function (watts) {
-//     console.log(`Потребляемая мощность компьютера ${watts} ватт`);
-// }
+Computer.prototype.getWatts = function (watts) {
+    console.log(`Потребляемая мощность компьютера ${watts} ватт`);
+}
 
-// const windowsPc = new Computer('homePC');
-// windowsPc.getWatts(600);
-// console.log(windowsPc);
+const windowsPc = new Computer('homePC');
+windowsPc.getWatts(600);
+console.log(windowsPc);
 
 // Конец 1-го прибора----------------------------------------------------
 
 // 2-й прибор -----------------------------------------------
 
 
-// function Lamp(name) {
-//     this._name = name,
-//         this.unPlugged = this._unPlugged
-// }
+function Lamp(name) {
+    this._name = name,
+        this.unPlugged = this._unPlugged
+}
 
-// Lamp.prototype = new Online('lamp');
+Lamp.prototype = new Online('lamp');
 
-// Lamp.prototype.getWatts = function (watts) {
-//     console.log(`Потребляемая мощность лампы ${watts} ватт`);
-// }
+Lamp.prototype.getWatts = function (watts) {
+    console.log(`Потребляемая мощность лампы ${watts} ватт`);
+}
 
-// const floorLamp = new Lamp('Floor Lamp');
-// floorLamp.getWatts(0);
-// console.log(floorLamp);
+const floorLamp = new Lamp('Floor Lamp');
+floorLamp.getWatts(0);
+console.log(floorLamp);
 
 
 // Конец 2-го прибора----------------------------------------------------
@@ -131,7 +131,7 @@ checkEmpty();
 Использовать синтаксис ES6.
 */
 
-class Online {
+class Power {
     constructor(name, watts) {
         this.name = name;
         this.watts = watts;
@@ -152,7 +152,7 @@ class Online {
 
 }
 
-class Device extends Online {
+class Device extends Power {
     constructor(name, pluggedIn) {
         super(pluggedIn, name);
         this.name = 'HomePc';
@@ -169,7 +169,7 @@ class Device extends Online {
     }
 }
 
-class Device2 extends Online {
+class Device2 extends Power {
     constructor(name, pluggedIn) {
         super(pluggedIn, name);
         this.name = 'HomeLamp';
