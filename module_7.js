@@ -139,14 +139,14 @@ class Power {
     }
     getWatts(watts) {
         if (typeof watts === 'number') {
-            console.log(`Потребляемая мощность ${watts} ватт`);
+            console.log(`${this.name} Потребляемая мощность ${watts} ватт`);
         } else {
             console.log('Not a number');
         }
     }
 
     offline(watts) {
-        console.log(`Девайс не включен, потребляет ${watts} ватт`);
+        console.log(`Девайс ${this.name} не включен, потребляет ${watts} ватт`);
     }
 
 
